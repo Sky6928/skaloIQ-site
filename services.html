@@ -3,56 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Услуги | SkaloIQ</title>
-  <link href="./assets/style.css" rel="stylesheet">
-  <link rel="icon" href="./assets/favicon.png" type="image/png">
+  <title>SkaloIQ — Услуги</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="icon" href="./assets/logo.png" />
 </head>
-<body class="font-sans bg-white text-gray-800">
+<body class="bg-gray-100 text-gray-800">
 
-<header class="bg-blue-900 text-white p-4 flex justify-between items-center shadow-md">
-  <img src="./assets/logo.png" alt="SkaloIQ Logo" class="h-20">
-  <nav class="space-x-4 text-lg font-semibold">
-    <a href="index.html" class="hover:text-yellow-300 transition">Главная</a>
-    <a href="about.html" class="hover:text-yellow-300 transition">О компании</a>
-    <a href="services.html" class="hover:text-yellow-300 transition">Услуги</a>
-    <a href="contact.html" class="hover:text-yellow-300 transition">Контакты</a>
-  </nav>
-</header>
-
-<main class="p-6 md:p-12">
-  <h1 class="text-4xl font-bold mb-8 text-blue-900 text-center">Наши услуги</h1>
-
-  <div class="grid gap-8 md:grid-cols-2">
-    <div class="p-6 border rounded shadow hover:shadow-lg transition transform hover:scale-105">
-      <h2 class="text-2xl font-bold text-blue-800 mb-2">AI-прогнозирование остатков</h2>
-      <p>Автоматический анализ и прогноз потребностей склада — минимизируйте недостачи и избытки.</p>
+  <header class="bg-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <img src="./assets/logo.png" alt="SkaloIQ" class="h-16">
+      <nav class="space-x-6 text-lg">
+        <a href="index.html" class="hover:text-blue-500 transition">Главная</a>
+        <a href="about.html" class="hover:text-blue-500 transition">О нас</a>
+        <a href="services.html" class="text-blue-600 font-semibold">Услуги</a>
+        <a href="contact.html" class="hover:text-blue-500 transition">Контакты</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="p-6 border rounded shadow hover:shadow-lg transition transform hover:scale-105">
-      <h2 class="text-2xl font-bold text-blue-800 mb-2">Оптимизация маршрутов</h2>
-      <p>Искусственный интеллект подбирает самые эффективные логистические схемы с учётом всех переменных.</p>
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8 text-center">Наши услуги</h1>
+    <p class="text-center mb-12 text-lg text-gray-600">Прокачайте аналитику своей логистики и склада — без необходимости держать в штате команду Data Scientist’ов!</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-2">📦 Прогнозирование остатков</h3>
+        <p class="text-gray-600">Автоматически рассчитываем, когда и сколько товара заказывать, чтобы не терять продажи и не замораживать склад.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-2">🚚 Оптимизация маршрутов</h3>
+        <p class="text-gray-600">ИИ сам строит маршруты доставки, экономя время и топливо — ваши логисты скажут спасибо!</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-2">📊 Аналитика в реальном времени</h3>
+        <p class="text-gray-600">Наглядные дашборды и отчёты: где затык, что улетает, где потери. Всё как на ладони.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-2">🤖 Автоматизация учёта</h3>
+        <p class="text-gray-600">Снижаем ручной труд: автоматический контроль движения товаров и уведомления.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-2">📥 Интеграция с 1С и CRM</h3>
+        <p class="text-gray-600">Быстро подключим вашу систему учёта — и вы получаете аналитику прямо в привычных инструментах.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-2">🧠 Консалтинг + ИИ</h3>
+        <p class="text-gray-600">Анализируем процессы, предлагаем решения и внедряем ИИ под ключ.</p>
+      </div>
     </div>
+  </main>
 
-    <div class="p-6 border rounded shadow hover:shadow-lg transition transform hover:scale-105">
-      <h2 class="text-2xl font-bold text-blue-800 mb-2">Автоматизация складов</h2>
-      <p>Отчёты, контроль движения товаров, управление запасами — всё в одном месте.</p>
-    </div>
-
-    <div class="p-6 border rounded shadow hover:shadow-lg transition transform hover:scale-105">
-      <h2 class="text-2xl font-bold text-blue-800 mb-2">Интеграции с 1С, SAP, CRM</h2>
-      <p>Бесшовная интеграция с вашими текущими системами для единой управляемой экосистемы.</p>
-    </div>
-
-    <div class="p-6 border rounded shadow hover:shadow-lg transition transform hover:scale-105">
-      <h2 class="text-2xl font-bold text-blue-800 mb-2">BI-дашборды</h2>
-      <p>Визуализация данных в понятных отчётах. Никаких Excel, только интерактивная аналитика.</p>
-    </div>
-  </div>
-</main>
-
-<footer class="bg-blue-900 text-white text-center p-4 mt-10">
-  © 2025 SkaloIQ. Все права защищены.
-</footer>
+  <footer class="bg-white py-4 mt-12 text-center text-sm text-gray-500">
+    &copy; 2025 SkaloIQ. Все права защищены.
+  </footer>
 
 </body>
 </html>
