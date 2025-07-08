@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkaloIQ — Контакты</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="icon" href="./assets/logo.png" />
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <header class="bg-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <img src="./assets/logo.png" alt="SkaloIQ" class="h-16">
+      <nav class="space-x-6 text-lg">
+        <a href="index.html" class="hover:text-blue-500 transition">Главная</a>
+        <a href="about.html" class="hover:text-blue-500 transition">О нас</a>
+        <a href="services.html" class="hover:text-blue-500 transition">Услуги</a>
+        <a href="contact.html" class="text-blue-600 font-semibold">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-6 text-center">Свяжитесь с нами</h1>
+    <p class="mb-8 text-center">Заполните форму — и мы свяжемся с вами в течение дня!</p>
+
+    <form action="https://formspree.io/f/mgvyjyjz" method="POST" class="space-y-6 bg-white p-8 shadow-md rounded-lg">
+      <div>
+        <label for="name" class="block mb-2 font-medium">Имя</label>
+        <input type="text" id="name" name="name" required class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring focus:border-blue-400">
+      </div>
+      <div>
+        <label for="email" class="block mb-2 font-medium">Email</label>
+        <input type="email" id="email" name="_replyto" required class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring focus:border-blue-400">
+      </div>
+      <div>
+        <label for="message" class="block mb-2 font-medium">Сообщение</label>
+        <textarea id="message" name="message" rows="5" required class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring focus:border-blue-400"></textarea>
+      </div>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition duration-300 w-full">Отправить</button>
+    </form>
+  </main>
+
+  <footer class="bg-white py-4 mt-12 text-center text-sm text-gray-500">
+    &copy; 2025 SkaloIQ. Все права защищены.
+  </footer>
+
+</body>
+</html>

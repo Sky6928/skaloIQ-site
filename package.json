@@ -1,0 +1,17 @@
+{
+  "name": "skaloiq-site",
+  "version": "1.0.0",
+  "description": "Лендинг компании SkaloIQ по логистике и аналитике",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./assets/input.css -o ./assets/output.css --watch"
+  },
+  "author": "SkaloIQ",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.3",
+    "postcss": "^8.4.31",
+    "autoprefixer": "^10.4.21"
+  }
+}
+
