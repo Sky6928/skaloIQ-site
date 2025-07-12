@@ -1,24 +1,32 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "info@skaloiq.ru";  // ← замени на свой email
+    $name = strip_tags(trim($_POST["name"]));
+    $email = filter_var(trim($_POST["_replyto"]), FILTER_SANITIZE_EMAIL);
+    $message = trim($_POST["message"]);
+
+    if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        http_response_code(400);
+        echo "Заполните форму корректно.";
+        exit;
+    }
+
+    $to = "info@skaloiq.ru";
     $subject = "Новое сообщение с сайта SkaloIQ";
+    $content = "Имя: $name\nEmail: $email\n\nСообщение:\n$message";
 
-    $name = htmlspecialchars($_POST["name"]);
-    $email = htmlspecialchars($_POST["_replyto"]);
-    $message = htmlspecialchars($_POST["message"]);
-
-    $headers = "From: $email\r\n";
+    $headers = "From: SkaloIQ <info@skaloiq.ru>\r\n";
     $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+    $headers .= "Content-Type: text/plain; charset=utf-8";
 
-    $body = "Имя: $name\nEmail: $email\nСообщение:\n$message";
-
-    if (mail($to, $subject, $body, $headers)) {
-        echo "success";
+    if (mail($to, $subject, $content, $headers)) {
+        http_response_code(200);
+        echo "Спасибо! Ваше сообщение отправлено.";
     } else {
-        echo "Ошибка при отправке сообщения.";
+        http_response_code(500);
+        echo "Ошибка при отправке.";
     }
 } else {
-    echo "Метод не поддерживается.";
+    http_response_code(403);
+    echo "Ошибка запроса.";
 }
 ?>
