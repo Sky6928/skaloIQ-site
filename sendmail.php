@@ -1,32 +1,24 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "info@skaloiq.ru";  // ← твой почтовый ящик REG.RU
+    $to = "info@skaloiq.ru";  // ← замени на свой email
     $subject = "Новое сообщение с сайта SkaloIQ";
 
-    $name = strip_tags(trim($_POST["name"]));
-    $email = filter_var(trim($_POST["_replyto"]), FILTER_SANITIZE_EMAIL);
-    $message = trim($_POST["message"]);
+    $name = htmlspecialchars($_POST["name"]);
+    $email = htmlspecialchars($_POST["_replyto"]);
+    $message = htmlspecialchars($_POST["message"]);
 
-    if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        http_response_code(400);
-        echo "Заполните форму корректно.";
-        exit;
-    }
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 
-    $email_content = "Имя: $name\n";
-    $email_content .= "Email: $email\n\n";
-    $email_content .= "Сообщение:\n$message\n";
+    $body = "Имя: $name\nEmail: $email\nСообщение:\n$message";
 
-    $headers = "From: $name <$email>";
-
-    if (mail($to, $subject, $email_content, $headers)) {
-        header("Location: thanks.html"); // Создай файл thanks.html или замени URL
-        exit;
+    if (mail($to, $subject, $body, $headers)) {
+        echo "success";
     } else {
-        http_response_code(500);
-        echo "Ошибка отправки письма.";
+        echo "Ошибка при отправке сообщения.";
     }
 } else {
-    http_response_code(403);
-    echo "Неверный запрос.";
+    echo "Метод не поддерживается.";
 }
+?>
